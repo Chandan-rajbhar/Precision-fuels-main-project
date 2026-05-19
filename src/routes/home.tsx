@@ -74,18 +74,21 @@ function HomePage() {
 
               {/* Button */}
               <div className="mt-12">
-                <button className="bg-[#b3534d] cursor-pointer hover:bg-[#9f4741] transition-all duration-300 text-white font-bold uppercase px-8 md:px-10 py-4 md:py-5 rounded-md text-base md:text-lg w-full sm:w-auto min-w-[270px]">
+                <button
+                  style={{ minWidth: 270 }}
+                  className="bg-[#b3534d] cursor-pointer hover:bg-[#9f4741] transition-all duration-300 text-white font-bold uppercase px-8 md:px-10 py-4 md:py-5 rounded-md text-base md:text-lg w-full sm:w-auto"
+                >
                   Order Now: 561-205-FUEL (3835)
                 </button>
               </div>
             </div>
 
             {/* Right Image */}
-            <div className="relative w-full">
+            <div className="w-full h-[45vh] sm:h-[55vh] lg:h-[60vh] rounded-2xl overflow-hidden shadow-xl">
               <img
                 src={hero_img}
                 alt="Dockside Fuel Service"
-                className="w-full h-[350] sm:h-[450px] lg:h-[480px] object-cover rounded-lg shadow-lg"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>

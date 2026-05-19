@@ -7,13 +7,16 @@ const links = [
   { to: "/home", label: "Home" },
   { to: "/", label: "About Us" },
   { to: "/services", label: "Services" },
+  { to: "/fueldelivery", label: "Fuel Delivery" },
   { to: "/products", label: "Gallery" },
   { to: "/about", label: "Blogs" },
+  
   { to: "/contact", label: "Contact Us" },
 ] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [fuelOpen, setFuelOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* TOP BAR */}
@@ -54,25 +57,66 @@ export function Header() {
           </Link>
           {/* NAV LINKS */}
           <nav className="hidden md:flex items-center gap-6">
-            {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                className="text-sm text-gray-600 hover:text-black transition"
-                activeProps={{ className: "text-black font-semibold" }}
-              >
-                {l.label}
-              </Link>
-            ))}
+            {links.map((l) =>
+              l.label === "Fuel Delivery" ? (
+                <div
+                  key={l.to}
+                  className="relative"
+                  onMouseEnter={() => setFuelOpen(true)}
+                  onMouseLeave={() => setFuelOpen(false)}
+                >
+                  <button
+                    onClick={() => setFuelOpen((s) => !s)}
+                    onFocus={() => setFuelOpen(true)}
+                    onBlur={() => setFuelOpen(false)}
+                    className="text-sm text-gray-600 hover:text-black transition"
+                  >
+                    {l.label}
+                  </button>
+
+                  <AnimatePresence>
+                    {fuelOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        className="absolute right-0 mt-2 bg-black  text-white rounded-md w-30 shadow-lg z-50"
+                      >
+                        <a
+                          href="#"
+                          className="block px-3 py-2 text-sm font-semibold border-b border-white/10 hover:bg-white/10 transition-colors cursor-pointer"
+                        >
+                          REC-90
+                        </a>
+                        <a
+                          href="#"
+                          className="block px-3 py-2 text-sm font-semibold hover:bg-white/10 transition-colors cursor-pointer"
+                        >
+                          Diesel Fuel
+                        </a>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  onClick={() => setFuelOpen(false)}
+                  className="text-sm text-gray-600 hover:text-black transition"
+                  activeProps={{ className: "text-black font-semibold" }}
+                >
+                  {l.label}
+                </Link>
+              )
+            )}
           </nav>
 
           {/* BUTTONS */}
           <div className="hidden md:flex items-center gap-3">
-            <button className="border border-red-600 text-red-600 px-4 py-2 rounded-md text-sm hover:bg-red-50 transition">
-              Client Portal
-            </button>
+
             <button className="bg-red-600 text-white px-4 py-2 rounded-md text-sm hover:bg-red-700 transition">
-              Order Fuel
+              ORDER NOW: 561-205-FUEL (3835)
             </button>
           </div>
 
@@ -95,16 +139,55 @@ export function Header() {
             className="md:hidden bg-white border-b"
           >
             <div className="px-6 py-4 flex flex-col gap-2">
-              {links.map((l) => (
-                <Link
-                  key={l.to}
-                  to={l.to}
-                  onClick={() => setOpen(false)}
-                  className="py-2 text-gray-700"
-                >
-                  {l.label}
-                </Link>
-              ))}
+              {links.map((l) =>
+                l.label === "Fuel Delivery" ? (
+                  <div key={l.to}>
+                    <button
+                      onClick={() => setFuelOpen((s) => !s)}
+                      className="w-full text-left py-2 text-gray-700 font-semibold"
+                    >
+                      {l.label}
+                    </button>
+
+                    {fuelOpen && (
+                      <div className="pl-4">
+                        <a
+                          href="#"
+                          onClick={() => {
+                            setOpen(false);
+                            setFuelOpen(false);
+                          }}
+                          className="block py-2 text-gray-700"
+                        >
+                          REC-90
+                        </a>
+                        <a
+                          href="#"
+                          onClick={() => {
+                            setOpen(false);
+                            setFuelOpen(false);
+                          }}
+                          className="block py-2 text-gray-700"
+                        >
+                          Diesel Fuel
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={l.to}
+                    to={l.to}
+                    onClick={() => {
+                      setOpen(false);
+                      setFuelOpen(false);
+                    }}
+                    className="py-2 text-gray-700"
+                  >
+                    {l.label}
+                  </Link>
+                )
+              )}
             </div>
           </motion.div>
         )}
