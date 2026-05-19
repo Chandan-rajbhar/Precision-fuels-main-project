@@ -140,3 +140,10 @@
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');
 }
+.sm_height{
+  height: 450px;
+}
+
+.lg_height{
+  height: 480px;
+}

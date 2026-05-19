@@ -6,7 +6,6 @@ export function Footer() {
   return (
     <footer className="bg-white py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
-
         {/* LEFT SIDE */}
         <div className="text-center md:text-left">
           {/* Logo */}
@@ -18,9 +17,8 @@ export function Footer() {
 
           {/* Text */}
           <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-md mx-auto md:mx-0">
-            Precision Fuels is a trusted fuel delivery company for boating
-            community, offering exceptional services in Miami Dade Broward
-            counties, Florida.
+            Precision Fuels - a division of Precision Fuel Group LLC 561-205-FUEL (3835) Proudly
+            Serving Palm Beach, Broward, and Miami-Dade Counties
           </p>
 
           {/* Social Icons */}
@@ -34,7 +32,6 @@ export function Footer() {
 
         {/* RIGHT SIDE */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center sm:text-left">
-
           {/* Navigation */}
           <div>
             <h4 className="text-red-500 font-semibold mb-4">Navigation</h4>
@@ -97,7 +94,6 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
         </div>
       </div>
     </footer>

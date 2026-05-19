@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 const links = [
+  { to: "/home", label: "Home" },
   { to: "/", label: "About Us" },
   { to: "/services", label: "Services" },
   { to: "/products", label: "Gallery" },
