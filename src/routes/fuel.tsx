@@ -4,7 +4,7 @@ import hero_img from "../../public/images/fuel_page_img/hero_section.webp";
 export const Route = createFileRoute("/fuel")({
   head: () => ({
     meta: [
-      { title: "Home — VoltaFuel" },
+      { title: "fuel — VoltaFuel" },
       {
         name: "description",
         content:

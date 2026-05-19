@@ -124,6 +124,49 @@
       linear-gradient(to bottom, oklch(1 0 0 / 0.04) 1px, transparent 1px);
     background-size: 60px 60px;
   }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(32px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-32px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.45s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.45s ease-out;
+  }
 }
 
 @font-face {
@@ -139,11 +182,4 @@
   font-weight: 300 700;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');
-}
-.sm_height{
-  height: 450px;
-}
-
-.lg_height{
-  height: 480px;
 }

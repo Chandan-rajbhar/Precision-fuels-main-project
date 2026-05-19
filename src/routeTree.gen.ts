@@ -14,7 +14,9 @@ import { Route as ProductsRouteImport } from './routes/products'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as HomeRouteImport } from './routes/fuel.tsx'
+import { Route as FuelRouteImport } from './routes/fuel.tsx'
+import { Route as Rec90RouteImport } from './routes/Rec_90.tsx'
+import { Route as DieselFuelRouteImport } from './routes/DieselFuel.tsx'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -42,11 +44,24 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 
-const HomeRoute = HomeRouteImport.update({
+const HomeRoute = FuelRouteImport.update({
   id: '/fuel',
   path: '/fuel',
   getParentRoute: () => rootRouteImport,
 } as any)
+
+const Rec90Route = Rec90RouteImport.update({
+  id: '/Rec90',
+  path: '/Rec90',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const DieselFuelRoute = DieselFuelRouteImport.update({
+  id: '/rec90-1',
+  path: '/rec90-1',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -55,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
   '/fuel': typeof HomeRoute
+  '/rec90-1': typeof DieselFuelRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -63,6 +79,7 @@ export interface FileRoutesByTo {
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
   '/fuel': typeof HomeRoute
+  '/rec90-1': typeof DieselFuelRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -72,13 +89,16 @@ export interface FileRoutesById {
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
   '/fuel': typeof HomeRoute
+  '/Rec90': typeof Rec90Route
+   '/rec90-1': typeof DieselFuelRoute
+
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/products' | '/services'| '/fuel'
+  fullPaths: '/' | '/about' | '/contact' | '/products' | '/services'| '/fuel' | '/Rec90'| '/rec90-1'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/products' | '/services' | '/fuel'
-  id: '__root__' | '/' | '/about' | '/contact' | '/products' | '/services' | '/fuel'
+  to: '/' | '/about' | '/contact' | '/products' | '/services' | '/fuel' | '/Rec90' | '/rec90-1'
+  id: '__root__' | '/' | '/about' | '/contact' | '/products' | '/services' | '/fuel' | '/Rec90' | '/rec90-1'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -88,6 +108,8 @@ export interface RootRouteChildren {
   ProductsRoute: typeof ProductsRoute
   ServicesRoute: typeof ServicesRoute
   HomeRoute: typeof HomeRoute
+  Rec90Route: typeof Rec90Route
+  DieselFuelRoute: typeof DieselFuelRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -96,7 +118,7 @@ declare module '@tanstack/react-router' {
       id: '/fuel'
       path: '/fuel'
       fullPath: '/fuel'
-      preLoaderRoute: typeof HomeRouteImport
+      preLoaderRoute: typeof FuelRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -134,7 +156,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-   
+    '/Rec90': {
+      id: '/Rec90'
+      path: '/Rec90'
+      fullPath: '/Rec90'
+      preLoaderRoute: typeof Rec90RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rec90-1': {
+      id: '/rec90-1'
+      path: '/rec90-1'
+      fullPath: '/rec90-1'
+      preLoaderRoute: typeof DieselFuelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -144,7 +179,9 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ProductsRoute: ProductsRoute,
   ServicesRoute: ServicesRoute,
-  HomeRoute: HomeRoute
+  HomeRoute: HomeRoute,
+  Rec90Route: Rec90Route,
+  DieselFuelRoute: DieselFuelRoute
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

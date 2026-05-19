@@ -1,12 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Award,
-  Users,
-  Globe,
-  Target,
-  CalendarDays,
-  ArrowRight,
-} from "lucide-react";
+import { Award, Users, Globe, Target, CalendarDays, ArrowRight } from "lucide-react";
 
 import refineryImg from "../../public/images/Blogs_image/refineryImg.png";
 import { FadeIn, PageHero } from "@/components/Section";
@@ -75,7 +68,6 @@ const values = [
     d: "Net-zero by 2040 with renewable fuel investments today.",
   },
 ];
-
 
 const blogPosts = [
   {
@@ -176,15 +168,14 @@ function AboutPage() {
 
               <div className="space-y-5">
                 <p className="text-gray-600 leading-relaxed text-lg">
-                  What started as a single Houston tanker rolling diesel to
-                  construction sites in 1998 has grown into one of the most
-                  trusted independent energy companies in the world.
+                  What started as a single Houston tanker rolling diesel to construction sites in
+                  1998 has grown into one of the most trusted independent energy companies in the
+                  world.
                 </p>
 
                 <p className="text-gray-600 leading-relaxed text-lg">
-                  Today, VoltaFuel operates 1,200+ retail stations, 14
-                  distribution terminals and partners with leading fleets,
-                  airlines and shipping operators worldwide.
+                  Today, VoltaFuel operates 1,200+ retail stations, 14 distribution terminals and
+                  partners with leading fleets, airlines and shipping operators worldwide.
                 </p>
               </div>
             </div>
@@ -195,28 +186,22 @@ function AboutPage() {
       {/* Blog */}
       <section className="py-16 md:py-20 bg-[#f8f8fc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-sm font-semibold tracking-widest uppercase text-primary">
               Latest Insights
             </span>
 
-            <h2 className="mt-3 text-4xl md:text-5xl font-bold text-black">
-              Our Insightful Blog
-            </h2>
+            <h2 className="mt-3 text-4xl md:text-5xl font-bold text-black">Our Insightful Blog</h2>
 
             <p className="mt-4 text-gray-500 leading-relaxed">
-              Explore innovation, sustainability and the future of modern
-              energy solutions.
+              Explore innovation, sustainability and the future of modern energy solutions.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-12 gap-6">
-
             {/* Main Blog */}
             <div className="lg:col-span-7">
               <div className="relative rounded-3xl overflow-hidden group min-h-130">
-
                 <img
                   src={blogPosts[0].image}
                   alt={blogPosts[0].title}
@@ -226,9 +211,7 @@ function AboutPage() {
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
 
                 <div className="absolute bottom-0 left-0 p-8 text-white">
-                  <h3 className="text-3xl font-bold leading-snug">
-                    {blogPosts[0].title}
-                  </h3>
+                  <h3 className="text-3xl font-bold leading-snug">{blogPosts[0].title}</h3>
 
                   <div className="flex items-center gap-2 mt-4 text-sm text-gray-200">
                     <CalendarDays size={16} />
@@ -236,8 +219,8 @@ function AboutPage() {
                   </div>
 
                   <p className="mt-5 text-gray-300 leading-relaxed max-w-xl">
-                    Discover how renewable innovation is transforming global
-                    industries and shaping the future of sustainable energy.
+                    Discover how renewable innovation is transforming global industries and shaping
+                    the future of sustainable energy.
                   </p>
                 </div>
               </div>
@@ -276,7 +259,6 @@ function AboutPage() {
                 </div>
               ))}
             </div>
-
           </div>
         </div>
       </section>
@@ -284,9 +266,7 @@ function AboutPage() {
       {/* Articles */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-
             <div>
               <span className="text-sm font-semibold tracking-widest uppercase text-primary">
                 Articles
@@ -298,14 +278,12 @@ function AboutPage() {
             </div>
 
             <p className="max-w-xl text-gray-500 leading-relaxed">
-              Stay updated with trends, startup innovation, AI transformation
-              and sustainability insights from our experts.
+              Stay updated with trends, startup innovation, AI transformation and sustainability
+              insights from our experts.
             </p>
-
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
             {articles.map((article, index) => (
               <div
                 key={index}
@@ -336,7 +314,6 @@ function AboutPage() {
                 </div>
               </div>
             ))}
-
           </div>
 
           <div className="flex justify-center mt-14">
@@ -350,7 +327,6 @@ function AboutPage() {
       {/* Values */}
       <section className="py-16 md:py-20 bg-[#f8f8fc] border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
           <div className="mb-12">
             <span className="text-sm font-semibold tracking-widest uppercase text-primary">
               What We Stand For
@@ -362,27 +338,19 @@ function AboutPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
             {values.map((v, i) => (
               <FadeIn key={v.t} delay={i * 0.08}>
                 <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
-
                   <div className="w-14 h-14 rounded-2xl bg-[#f5f5fa] flex items-center justify-center text-black mb-6">
                     <v.icon className="w-7 h-7" />
                   </div>
 
-                  <h3 className="text-2xl font-semibold text-black">
-                    {v.t}
-                  </h3>
+                  <h3 className="text-2xl font-semibold text-black">{v.t}</h3>
 
-                  <p className="mt-3 text-gray-500 leading-relaxed">
-                    {v.d}
-                  </p>
-
+                  <p className="mt-3 text-gray-500 leading-relaxed">{v.d}</p>
                 </div>
               </FadeIn>
             ))}
-
           </div>
         </div>
       </section>
@@ -390,19 +358,15 @@ function AboutPage() {
       {/* Timeline */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-
           <div className="mb-14 text-center">
             <span className="text-sm font-semibold tracking-widest uppercase text-primary">
               Milestones
             </span>
 
-            <h2 className="mt-3 text-4xl md:text-5xl font-bold text-black">
-              Our Journey
-            </h2>
+            <h2 className="mt-3 text-4xl md:text-5xl font-bold text-black">Our Journey</h2>
           </div>
 
           <div className="relative">
-
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200" />
 
             {milestones.map((m, i) => (
@@ -412,33 +376,22 @@ function AboutPage() {
                     i % 2 !== 0 ? "md:flex-row-reverse" : ""
                   }`}
                 >
-
                   <div className="absolute left-4 md:left-1/2 top-3 -translate-x-1/2 w-5 h-5 rounded-full bg-primary border-4 border-white shadow-md" />
 
                   <div className="hidden md:block flex-1" />
 
                   <div className="ml-12 md:ml-0 flex-1">
                     <div className="bg-[#f8f8fc] rounded-3xl p-6 border border-gray-100 shadow-sm">
+                      <span className="text-3xl font-bold text-primary">{m.y}</span>
 
-                      <span className="text-3xl font-bold text-primary">
-                        {m.y}
-                      </span>
+                      <h3 className="mt-2 text-2xl font-semibold text-black">{m.t}</h3>
 
-                      <h3 className="mt-2 text-2xl font-semibold text-black">
-                        {m.t}
-                      </h3>
-
-                      <p className="mt-3 text-gray-500 leading-relaxed">
-                        {m.d}
-                      </p>
-
+                      <p className="mt-3 text-gray-500 leading-relaxed">{m.d}</p>
                     </div>
                   </div>
-
                 </div>
               </FadeIn>
             ))}
-
           </div>
         </div>
       </section>
