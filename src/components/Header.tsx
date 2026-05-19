@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 const links = [
-  { to: "/home", label: "Home" },
   { to: "/", label: "About Us" },
   { to: "/services", label: "Services" },
   { to: "/fueldelivery", label: "Fuel Delivery" },
@@ -93,6 +92,12 @@ export function Header() {
                           className="block px-3 py-2 text-sm font-semibold hover:bg-white/10 transition-colors cursor-pointer"
                         >
                           Diesel Fuel
+                        </a>
+                         <a
+                          href="/fuel"
+                          className="block px-3 py-2 text-sm font-semibold hover:bg-white/10 transition-colors cursor-pointer"
+                        >
+                          Fuel
                         </a>
                       </motion.div>
                     )}

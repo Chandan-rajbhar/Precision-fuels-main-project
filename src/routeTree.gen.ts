@@ -14,7 +14,7 @@ import { Route as ProductsRouteImport } from './routes/products'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as HomeRouteImport } from './routes/home'
+import { Route as HomeRouteImport } from './routes/fuel.tsx'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -43,8 +43,8 @@ const IndexRoute = IndexRouteImport.update({
 } as any)
 
 const HomeRoute = HomeRouteImport.update({
-  id: '/home',
-  path: '/home',
+  id: '/fuel',
+  path: '/fuel',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -54,7 +54,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
-  '/home': typeof HomeRoute
+  '/fuel': typeof HomeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,7 +62,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
-  '/home': typeof HomeRoute
+  '/fuel': typeof HomeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,14 +71,14 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
-  '/home': typeof HomeRoute
+  '/fuel': typeof HomeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/products' | '/services'| '/home'
+  fullPaths: '/' | '/about' | '/contact' | '/products' | '/services'| '/fuel'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/products' | '/services' | '/home'
-  id: '__root__' | '/' | '/about' | '/contact' | '/products' | '/services' | '/home'
+  to: '/' | '/about' | '/contact' | '/products' | '/services' | '/fuel'
+  id: '__root__' | '/' | '/about' | '/contact' | '/products' | '/services' | '/fuel'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -92,10 +92,10 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-     '/home': {
-      id: '/home'
-      path: '/home'
-      fullPath: '/home'
+     '/fuel': {
+      id: '/fuel'
+      path: '/fuel'
+      fullPath: '/fuel'
       preLoaderRoute: typeof HomeRouteImport
       parentRoute: typeof rootRouteImport
     }

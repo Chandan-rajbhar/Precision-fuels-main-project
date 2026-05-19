@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import hero_img from "../../public/images/home_page_img/hero_section.webp";
+import hero_img from "../../public/images/fuel_page_img/hero_section.webp";
 
-export const Route = createFileRoute("/home")({
+export const Route = createFileRoute("/fuel")({
   head: () => ({
     meta: [
       { title: "Home — VoltaFuel" },
